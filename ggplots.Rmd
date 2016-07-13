@@ -49,5 +49,17 @@ library(dplyr)
 library(gapminder)
 library(ggplot2)
 install.packages("gapminder")
+##subset data
+g <- gapminder%>%
+  filter(year==2007)%>%
+mutate(pop_m =pop/1e6)
 ```
+#my first plot
+a simple geom point
+```{r}
+#ggplot (data, aes(what's x, whats y)) + what kind of plot
+s <- ggplot(g, aes(x = gdpPercap, y=lifeExp)) + geom_point()
+s
+```
+
 
